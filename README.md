@@ -4,7 +4,7 @@ Starter code for the project in the React Fundmentals module of the [React cours
 
 Follow along with the [classroom](https://classroom.alterclass.io) lessons to complete the project, or attend a live-stream session with your instructor from the [Discord server](https://discord.com/channels/742753758450155662/748890194136137838).
 
-![React Trello by AlterClass](https://alterclass.s3.eu-west-3.amazonaws.com/react-trello.png)
+[![React Trello by AlterClass](https://alterclass.s3.eu-west-3.amazonaws.com/react-trello.png)](https://react-trello.app)
 
 Check out the live demo of the final result: [https://react-trello.app](https://react-trello.app).
 
