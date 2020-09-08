@@ -28,10 +28,15 @@ The [package.json](https://github.com/AlterClassIO/react-trello/blob/master/pack
 3. Install the dependencies: `npm install`
 
 4. Start the app in the development mode: `npm start`
+
 ![Compiled successfully!](https://alterclass.s3.eu-west-3.amazonaws.com/react-app-compiled.png)
 
-4. Follow along with the lesson.
+5. Open [http://localhost:3000](http://localhost:3000) to view your React application in the browser
 
-5. Implement the project.
+![React Trello starting point](https://alterclass.s3.eu-west-3.amazonaws.com/react-trello-starting-point.png)
 
-6. Submit!
+6. Follow along with the lesson.
+
+7. Implement the project.
+
+8. Submit!
