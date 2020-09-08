@@ -1,8 +1,56 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  background-color: var(--bg-color);
+  
+  /* Colors */
+  --white: #ffffff;
+  --black: #000000;
+  --blue: #0079bf;
+  --dark: 9, 30, 66;
+
+  --bg-color: var(--blue);
+  --bg-header: rgba(0,0,0,.15);
+  --bg-footer: var(--white);
+
+  --bg-list: #ebecf0;
+  --bg-tag: #ff9f1a;
+  --bg-divider: rgba(var(--dark), .13);
+  --bg-modal: rgba(0,0,0,.6);
+  --bg-scrollbar-track: rgba(var(--dark), .08);
+  --bg-scrollbar-thumb: rgba(var(--dark), .2);
+
+  --bg-btn: rgba(0,0,0,.6);
+  --bg-btn-hover: rgba(0,0,0,.8);
+  --bg-btn-success: #5aac44;
+  --bg-btn-success-hover: #61bd4f;
+  --bg-add-button: hsla(0,0%,100%,.24);
+  --bg-add-button-hover: hsla(0,0%,100%,.32);
+
+  --bg-card-hover: #f4f5f7;
+  --bg-list-item-hover: rgba(var(--dark), .04);
+  --add-card-color-hover: #172b4d;
+  
+  --text-gray: #5e6c84;
+  
+  --base-icon-color: #6b778c;
+  --base-icon-color-hover: #172b4d;
+  --label-icon-color: tomato;
+  --bg-menu-icon: rgba(var(--dark), .08);
+  --bg-add-card-hover: rgba(var(--dark), .08);
+
+  --base-shadow-color: rgba(var(--dark), .25);
+  --popover-shadow-color: rgba(var(--dark), .25);
+  --input-shadow-color: var(--blue);
+
+  /* Box shadows */
+  --popover-shadow: 0 8px 16px -4px var(--base-shadow-color), 0 0 0 1px var(--popover-shadow-color);
+  --card-shadow: 0 1px 0 var(--base-shadow-color);
+  --textarea-shadow: 0 1px 0 var(--base-shadow-color);
+  --input-shadow: inset 0 0 0 2px var(--input-shadow-color);
 }
