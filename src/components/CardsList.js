@@ -190,7 +190,7 @@ CardsList.defaultProps = {
 CardsList.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  cards: PropTypes.objectOf(
+  cards: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.string.isRequired,
       number: PropTypes.number.isRequired,
