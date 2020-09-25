@@ -1,8 +1,16 @@
+/* App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 /* Header */
 .app-header {
   background: var(--bg-header);
   text-align: center;
   height: 55px;
+  overflow: hidden;
 }
 .app-header h1 {
   margin: 0;
@@ -14,22 +22,20 @@
 /* Footer */
 .app-footer {
   padding: 18px 24px;
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
   background: var(--bg-footer);
   text-align: center;
   font-size: 1.1rem;
+  overflow: hidden;
 }
 
 /* Board */
 .board {
   display: flex;
   flex-direction: row;
-  position: absolute;
-  top: 0; bottom: 0; right: 0; left: 0;
-  padding: 75px 10px 10px 10px;
+  flex-grow: 1;
   overflow-y: hidden;
   overflow-x: auto;
+  padding: 10px 0;
 }
 .board-lists {
   list-style: none;
@@ -46,7 +52,7 @@
   display: flex;
   flex-direction: column;
   width: 275px;
-  margin-right: 10px;
+  margin-left: 10px;
   max-height: 100%;
   padding-right: 10px;
   padding-left: 10px;
@@ -71,6 +77,7 @@
   overflow: auto;
   list-style: none;
   padding-left: 0;
+  min-height: 20px;
 }
 
 /* Card */
@@ -120,8 +127,11 @@ hr {
   font-size: 16px;
   font-weight: 400;
   padding: 10px;
+  margin: 0 10px;
   text-align: left;
   height: fit-content;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 .add-button.add-card-button {
   border: none;
@@ -241,19 +251,21 @@ hr {
 .form {
   padding: 0px;
   border-radius: 3px;
-  width: 250px;
   height: fit-content;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 .form-list {
   width: 275px;
   background-color: var(--bg-list);
   padding: 10px;
+  margin-left: 10px;
 }
 .form-editor {
   width: 270px;
 }
 .form-card {
-  width: 250px;
+  width: 270px;
 }
 .form-header {
   background-color: var(--white);
@@ -264,15 +276,16 @@ hr {
   border-radius: 3px;
   box-shadow: var(--textarea-shadow);
   margin-bottom: 8px;
-  min-height: 50px;
+  min-height: 75px;
   max-height: 250px;
   padding: 10px;
   font-size: 14px;
   border: none;
   overflow: hidden;
   resize: none;
-  width: 250px;
+  width: 100%;
   outline: none;
+  box-sizing: border-box;
 }
 .form-input {
   background-color: var(--white);
@@ -285,8 +298,9 @@ hr {
   overflow-y: scroll;
   display: block;
   margin-bottom: 5px;
-  width: 250px;
+  width: 100%;
   outline: none;
+  box-sizing: border-box;
 }
 .form-actions {
   margin-bottom: 10px;
