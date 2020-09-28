@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 // Icons
 import { IoMdAdd as AddIcon } from 'react-icons/io';
 // Components
+import { Droppable, Draggable } from 'react-beautiful-dnd';
 import Card from './Card';
 import CardEditor from './CardEditor';
 import Menu from './Menu';
@@ -159,6 +160,14 @@ class CardsList extends Component {
   renderFooter() {}
 
   // TODO: render the CardsList UI.
+  //
+  // [BONUS]:
+  // - Wrap the cards list inside the <Draggable> component
+  // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md
+  // - Add the draggableId prop to it (should be the list ID)
+  // - Add the index prop to it (should be the list index)
+  // - Add the children function that returns your cards list component and bind everything together
+  // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md#children-function-render-props--function-as-child
   render() {
     return (
       <div className="cards-list">
@@ -189,6 +198,7 @@ CardsList.defaultProps = {
 
 CardsList.propTypes = {
   id: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   cards: PropTypes.arrayOf(
     PropTypes.exact({

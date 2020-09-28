@@ -158,6 +158,7 @@ class Board extends Component {
   renderNewList() {}
 
   // TODO: render the Board UI.
+  //
   // [BONUS]:
   // - Wrap the board inside the <DragDropContext> component
   // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/drag-drop-context.md
