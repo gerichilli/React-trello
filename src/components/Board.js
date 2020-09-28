@@ -3,6 +3,7 @@ import { _getNextNumber, _generateId } from '../utils';
 // Icons
 import { IoMdAdd as AddIcon } from 'react-icons/io';
 // Components
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import CardsList from './CardsList';
 import Form from './Form';
 
@@ -120,6 +121,39 @@ class Board extends Component {
   // - Use the `this.setState` method to update the state (cards)
   handleAddTag(cardId, text = '') {}
 
+  // [BONUS]: implement the handleDragEnd method to persist list and card reordering
+  // Tips:
+  // - Check if the element has been dropped inside the droppable context (using destination). If not, ignore droppping
+  // - Check if the element has been dropped in a new location (using droppableId from destination and source). If not, ignore droppping
+  // - Handle both type of draggable (list and card) by checking the value of type
+  // - Re-order cards inside the list if type equals 'card'. Use the `this.setState` method to update the state (lists)
+  // - Re-order lists inside the board if type equals 'list'. Use the `this.setState` method to update the state (listOrder)
+  handleDragEnd({ destination, source, draggableId, type }) {
+    // Drop out of the droppable context
+    if (!destination) {
+      return;
+    }
+    // Drop in the exact same place
+    if (destination.droppableId === source.droppableId && 
+        destination.index === source.index) {
+      return;
+    }
+    // Re-order cards inside the list
+    if (type === "card") {
+      const lists = {...this.state.lists};
+      lists[source.droppableId].cardIds.splice(source.index, 1);
+      lists[destination.droppableId].cardIds.splice(destination.index, 0, draggableId);
+      this.setState({ lists });
+    }
+    // Re-order lists inside the board
+    if (type === "list") {
+      const listOrder = [...this.state.listOrder];
+      listOrder.splice(source.index, 1);
+      listOrder.splice(destination.index, 0, draggableId);
+      this.setState({ listOrder });
+    }
+  }
+
   // TODO: implement the renderLists method to render the board lists UI.
   // Tips:
   // - Iterate through the listOrder state array to render each list of cards (CardsList)
@@ -139,6 +173,9 @@ class Board extends Component {
   renderNewList() {}
 
   // TODO: render the Board UI.
+  // [BONUS]:
+  // - Wrap the board inside the <DragDropContext> component
+  // - Add the onDragEnd prop to the <DragDropContext> component
   render() {
     return (
       <div className="board">
