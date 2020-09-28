@@ -128,36 +128,21 @@ class Board extends Component {
   // - Handle both type of draggable (list and card) by checking the value of type
   // - Re-order cards inside the list if type equals 'card'. Use the `this.setState` method to update the state (lists)
   // - Re-order lists inside the board if type equals 'list'. Use the `this.setState` method to update the state (listOrder)
-  handleDragEnd({ destination, source, draggableId, type }) {
-    // Drop out of the droppable context
-    if (!destination) {
-      return;
-    }
-    // Drop in the exact same place
-    if (destination.droppableId === source.droppableId && 
-        destination.index === source.index) {
-      return;
-    }
-    // Re-order cards inside the list
-    if (type === "card") {
-      const lists = {...this.state.lists};
-      lists[source.droppableId].cardIds.splice(source.index, 1);
-      lists[destination.droppableId].cardIds.splice(destination.index, 0, draggableId);
-      this.setState({ lists });
-    }
-    // Re-order lists inside the board
-    if (type === "list") {
-      const listOrder = [...this.state.listOrder];
-      listOrder.splice(source.index, 1);
-      listOrder.splice(destination.index, 0, draggableId);
-      this.setState({ listOrder });
-    }
-  }
+  handleDragEnd({ destination, source, draggableId, type }) {}
 
   // TODO: implement the renderLists method to render the board lists UI.
   // Tips:
   // - Iterate through the listOrder state array to render each list of cards (CardsList)
   // - Pass the necessary methods to the CardsList component to handle all actions
+  //
+  // [BONUS]:
+  // - Wrap the board lists inside the <Droppable> component
+  // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md
+  // - Add the droppableId prop to it
+  // - Add the direction prop to it (should be 'horizontal')
+  // - Add the type prop to it (should be 'list')
+  // - Add the children function that returns your board lists component and bind everything together
+  // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md#children-function
   renderLists() {
     return (
       <div className="board-lists">
@@ -175,6 +160,7 @@ class Board extends Component {
   // TODO: render the Board UI.
   // [BONUS]:
   // - Wrap the board inside the <DragDropContext> component
+  // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/drag-drop-context.md
   // - Add the onDragEnd prop to the <DragDropContext> component
   render() {
     return (
