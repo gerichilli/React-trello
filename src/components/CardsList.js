@@ -130,6 +130,10 @@ class CardsList extends Component {
   // - Should render a h3 tag for the list title
   // - Should render a Menu component
   // - Should render the number of cards in the list
+  //
+  // [BONUS]:
+  // - Add a drag handle to the list header so that user can grab the list and drag it around
+  // (using the dragHandleProps)
   renderHeader() {
     return (
       <div className="cards-list-header">
@@ -145,6 +149,15 @@ class CardsList extends Component {
   // TODO: implement the renderCards method to render the cards.
   // Tips:
   // - Iterate through this.props.cards to render each Card
+  //
+  // [BONUS]:
+  // - Wrap the cards inside the <Droppable> component
+  // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md
+  // - Add the droppableId prop to it (should be the list ID)
+  // - Add the direction prop to it (should be 'vertical')
+  // - Add the type prop to it (should be 'card')
+  // - Add the children function that returns your cards and bind everything together
+  // --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/droppable.md#children-function
   renderCards() {
     return (
       <ol className="cards">
