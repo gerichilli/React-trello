@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // Components
+import { Draggable } from 'react-beautiful-dnd';
 import Tag from './Tag';
 
 /*
@@ -15,7 +16,14 @@ import Tag from './Tag';
  * 
  * Tips:
  * - You can use the 'card' CSS class for styling
- * 
+ *
+ * [BONUS]:
+ * - Wrap the card inside the <Draggable> component
+ * --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md
+ * - Add the draggableId prop to it (should be the card ID)
+ * - Add the index prop to it (should be the card index)
+ * - Add the children function that returns your card component and bind everything together
+ * --> https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/api/draggable.md#children-function-render-props--function-as-child
  */
 const Card = (props) => (
   <div className="card">
@@ -26,6 +34,7 @@ const Card = (props) => (
 
 Card.propTypes = {
   id: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   number: PropTypes.number.isRequired,
   description: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string)
