@@ -1,32 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // Icons
-import { IoIosMore as MenuIcon } from 'react-icons/io';
+import { MdMoreHoriz as MenuIcon } from "react-icons/md";
 // Components
 import Popover from './Popover';
 
-/*
- * TODO: Create the Menu component
- *
- * Requirements:
- * - Must be named Menu
- * - Must be a function component
- * - Should render a <div> element as the container for the menu content
- * - Should render an icon the user can click to open/close the menu
- * - Should render the lists of actions inside a Popover component if the menu is open
- * - The Popover component should be mounted only if the menu is open
- * - Each list of actions should be separated by an horizontal line (use a <hr> element)
- * 
- * Tips:
- * - You can use the 'menu' CSS class for styling
- * 
- */ 
-const Menu = (props) => (
-  <div className="menu">
-    { /* render the menu icon */ }
-    { /* render the lists of actions */ }
-  </div>
-);
+const Menu = (props) => {
+  const actions = props.actions.map((actionsGroup, index) => {
+    return (
+      <div key={index}>
+          <ul className="menu-actions">
+            {actionsGroup.map(action => (
+              <li 
+              className="menu-action" 
+              key={action.title}
+              onClick={action.onClick}
+              > 
+                <p>{action.title}</p>
+              </li>
+            ))}
+          </ul>
+          <hr className="divider"></hr>
+      </div>
+    )
+  })
+
+  const toggleMenu = () => {
+    props.onClick(props.id);
+  }
+
+  return (
+    <div className="menu">
+      <MenuIcon 
+        onClick={toggleMenu}
+      />      
+      {
+        props.isOpen ? (
+          <>
+            <Popover 
+            title='List Actions'
+            onClickOutside={toggleMenu}
+            >
+              {actions}
+            </Popover>
+          </>
+        ) : null
+      }
+    </div>
+  )
+};
 
 Menu.propTypes = {
   isOpen: PropTypes.bool,

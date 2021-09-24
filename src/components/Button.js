@@ -1,27 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/*
- * TODO: Create the Button component
- *
- * Requirements:
- * - Must be named Button
- * - Must be a function component
- * - Should render a <button> element
- * - Should render a <span> element inside the <button> for the text
- * - Should render an optional icon (from react-icons) before the text
- * 
- * Tips:
- * - You can use the 'btn' and 'btn-success' CSS classes for styling
- * 
- */ 
-const Button = (props) => null;
+const Button = (props) => {
+  const buttonClass = {
+    addList: 'add-button',
+    addCard: 'add-button add-card-button',
+    success: 'btn btn-success',
+    editor: 'btn btn-editor'
+  }
+
+  return(
+    <button 
+    className={buttonClass[props.variant]}
+    onClick={props.onButtonClick}
+    >
+      {props.icon || ''}
+      <span>{props.text}</span>
+    </button>
+  )
+};
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   icon: PropTypes.node,
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(['success', 'editor'])
+  variant: PropTypes.oneOf(['success', 'editor', 'addList', 'addCard'])
 };
 
 export default Button;
