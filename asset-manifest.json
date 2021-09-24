@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/gerichilli/React-trello.git/static/css/main.55fa34e3.chunk.css",
-    "main.js": "/gerichilli/React-trello.git/static/js/main.bc9a1f80.chunk.js",
-    "main.js.map": "/gerichilli/React-trello.git/static/js/main.bc9a1f80.chunk.js.map",
-    "runtime-main.js": "/gerichilli/React-trello.git/static/js/runtime-main.f395cbc2.js",
-    "runtime-main.js.map": "/gerichilli/React-trello.git/static/js/runtime-main.f395cbc2.js.map",
-    "static/js/2.476bddf4.chunk.js": "/gerichilli/React-trello.git/static/js/2.476bddf4.chunk.js",
-    "static/js/2.476bddf4.chunk.js.map": "/gerichilli/React-trello.git/static/js/2.476bddf4.chunk.js.map",
-    "index.html": "/gerichilli/React-trello.git/index.html",
-    "static/css/main.55fa34e3.chunk.css.map": "/gerichilli/React-trello.git/static/css/main.55fa34e3.chunk.css.map",
-    "static/js/2.476bddf4.chunk.js.LICENSE.txt": "/gerichilli/React-trello.git/static/js/2.476bddf4.chunk.js.LICENSE.txt"
+    "main.css": "/React-trello/static/css/main.55fa34e3.chunk.css",
+    "main.js": "/React-trello/static/js/main.bc9a1f80.chunk.js",
+    "main.js.map": "/React-trello/static/js/main.bc9a1f80.chunk.js.map",
+    "runtime-main.js": "/React-trello/static/js/runtime-main.bd41280e.js",
+    "runtime-main.js.map": "/React-trello/static/js/runtime-main.bd41280e.js.map",
+    "static/js/2.476bddf4.chunk.js": "/React-trello/static/js/2.476bddf4.chunk.js",
+    "static/js/2.476bddf4.chunk.js.map": "/React-trello/static/js/2.476bddf4.chunk.js.map",
+    "index.html": "/React-trello/index.html",
+    "static/css/main.55fa34e3.chunk.css.map": "/React-trello/static/css/main.55fa34e3.chunk.css.map",
+    "static/js/2.476bddf4.chunk.js.LICENSE.txt": "/React-trello/static/js/2.476bddf4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f395cbc2.js",
+    "static/js/runtime-main.bd41280e.js",
     "static/js/2.476bddf4.chunk.js",
     "static/css/main.55fa34e3.chunk.css",
     "static/js/main.bc9a1f80.chunk.js"
