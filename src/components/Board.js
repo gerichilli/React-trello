@@ -180,15 +180,14 @@ class Board extends Component {
   
   handleCopyList(listId) {
     // - Copy all cards from list to clone
-    const [cloneCards] = this.state.lists[listId].cardIds.map(cardId => {
+    let cloneCards;
+    this.state.lists[listId].cardIds.forEach(cardId => {
+      
       const cloneCardId = _generateId();
-      // cloneCards[cloneCardId] = Object.assign({}, this.state.cards[cardId]);
-      // cloneCards[cloneCardId].id = cloneCardId;
-      // cloneCards[cloneCardId].number = _getNextNumber({...this.state.cards, ...cloneCards});
-      return {[cloneCardId]: {
+      cloneCards = {...cloneCards, [cloneCardId]: {
         ...this.state.cards[cardId],
         id: cloneCardId,
-        number: _getNextNumber(this.state.cards)
+        number: _getNextNumber({...this.state.cards, ...cloneCards})
       }}
     })
 
